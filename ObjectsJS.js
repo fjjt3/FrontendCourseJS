@@ -1,4 +1,4 @@
-let persona = {
+/* let persona = {
     nombre: 'Luke',
     apellido: 'Skywalker',
     email: 'jp@mail.com',
@@ -30,5 +30,39 @@ console.log(persona);
 
 delete persona.tel;
 
+
+
 console.log(persona);
+
+let personaArray = Object.values( persona );
+console.log(personaArray);
+
+let personaString = JSON.stringify( persona );
+console.log(personaString); */
+
+// Get
+let persona = {
+    nombre: 'Luke',
+    apellido: 'Skywalker',
+    email: 'jp@mail.com',
+    age: 50,
+    idioma:'de',
+    get lang(){
+        return this.idioma.toLocaleUpperCase();
+    },
+    set lang(lang){
+        this.idioma = lang.toLocaleUpperCase();
+    },
+    get nombreCompleto(){
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+console.log(persona.nombreCompleto);
+
+// Set
+console.log(persona.lang);
+persona.lang = 'en';
+console.log(persona.lang);
+console.log(persona.idioma);
 

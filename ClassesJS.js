@@ -17,14 +17,28 @@ class Persona{
     set apellido(apellido){
         this._apellido = apellido;
     }
+    nombreCompleto(){
+        return this._nombre + ' ' + this._apellido;
+    }
+    toString(){
+        return this.nombreCompleto();
+    }
 }
 
 class Empleado extends Persona{
-    constructor(departamento){
+    constructor(nombre, apellido, departamento){
+        super(nombre, apellido); // calls father constructor
         this._departamento = departamento;
     }
     get departamento(){
         return this._departamento
+    }
+    set departamento(departamento){
+        this._departamento = departamento;
+    }
+    //sobrescritura
+    nombreCompleto(){
+        return super.nombreCompleto() + ', ' + this._departamento;
     }
 }
 
@@ -34,6 +48,13 @@ console.log(persona1);
 let persona2 = new Persona('Anakin', 'Skywalker');
 console.log(persona2);
 
+
 console.log(persona1.nombre);
 persona1.nombre = 'John' // get nombre
 console.log(persona1.nombre);
+
+let empleado1 = new Empleado('Jhon', 'Doe', 'IT' );
+console.log(empleado1);
+console.log(empleado1.nombre);
+console.log(empleado1.nombreCompleto());
+console.log(empleado1.toString());

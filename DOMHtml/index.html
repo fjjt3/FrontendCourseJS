@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>DOM with JavaScript</title>
+    <title>Ejemplo DOM con JavaScript</title>
 </head>
 <body>
-    <h1 id="cabecero">DOM with JavaScript</h1>
-    <p id="parrafo">Greetings</p>
+    <h1 id='cabecero'>Ejemplo DOM con JavaScript</h1>
+    <p>Saludos!</p>
+    <p>Otro parrafo</p>
     <script>
-        let cabecero = document.getElementById("cabecero");
-        console.log(`valor cabecero: ${cabecero.innerHTML}`);
-        let parrafo = document.getElementById("parrafo");
-        console.log(`valor parrafo: ${parrafo.innerHTML}`);
-        parrafo.innerHTML = "nuevo valor del p"
-        cabecero.innerHTML = "nuevo valor cabecero"
+        let parrafos = document.getElementsByTagName('p');
+        console.log( `No. párrafos: ${parrafos.length}`);
+        for(let i=0; i<parrafos.length;i++){
+            console.log(`${i} - ${parrafos[i].innerHTML}`);
+        }
     </script>
+
 </body>
 </html>

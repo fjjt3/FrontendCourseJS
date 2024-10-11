@@ -12,16 +12,21 @@
     <br/><br/>
     Apellido: <input type="text" id='apellido'/>
     <script>
-        document.getElementById('nombre').addEventListener('focus',cambiar);
-        document.getElementById('nombre').addEventListener('blur',regresar);
+        //callback , no se puede reutilizar
+        document.getElementById('nombre').addEventListener('focus',(evento)=>{
+            evento.target.style.background = 'pink';
+        });
+        document.getElementById('nombre').addEventListener('blur',(evento)=>{
+            evento.target.style.background = '';// white
+        });
         document.getElementById('apellido').addEventListener('focus',cambiar);
         document.getElementById('apellido').addEventListener('blur',regresar);
         function cambiar(evento){
             let componente = evento.target;
-            componente.style.background='yellow';
+            componente.style.background =' yellow';
         }
         function regresar(evento){
-            evento.target.style.background='white';
+            evento.target.style.background = 'white';
         }
 
     </script>

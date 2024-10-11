@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <title>Manejo DOM con JavaScript</title>
 </head>
-<body>
+<body onload="entrar()">
     <h1 id="titulo">Manejo DOM con JavaScript</h1>
     <br/>
     <div id="mostrar"></div>
     <script>
-        document.getElementById('titulo').onclick = cambiarTexto;
-
-        function cambiarTexto(){
-            document.getElementById('mostrar').innerHTML='Nuevo contenido';
+        function entrar(){
+            alert('loading web');
+            let texto ='';
+            if(navigator.cookieEnabled){
+                texto='Cookies habilatadas'
+            }else {
+                texto='Cookies inhabilatadas'
+            }
+            document.getElementById('mostrar').innerHTML = texto
         }
     </script>
 </body>

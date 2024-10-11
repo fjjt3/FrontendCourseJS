@@ -2,27 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ejemplo formulario con JavaScript</title>
+    <title>Manejo DOM con JavaScript</title>
 </head>
 <body>
-    <form id="formulario">
-        Nombre: <input type="text" name="nombre", value="Juan">
-        <br/>
-        Apellido: <input type="text" name="apellido", value="Skywalker">
-        <br/>
-    </form>
-    <button onclick="mostrarValores()">Mostrar</button>
-    <div id="valores"></div>
+     <!--<h1 onclick="this.innerHTML='Nuevo título'" id='titulo'>Manejo DOM con JavaScript</h1>-->
+    <h1 onclick="cambiarTexto(this)">Manejo DOM con JavaScript</h1>
+    <br/>
     <script>
-        function mostrarValores(){
-            let formulario = document.forms['formulario'];
-            let texto = '';
-            let nombre = formulario['nombre'];
-            let apellido = formulario['apellido'];
-            texto = nombre.value + '<br/>' + apellido.value;
-            document.getElementById('valores').innerHTML = texto;
-        }
+        function cambiarTexto(titulo){
+            console.log(titulo);
+            console.log(titulo.innerHTML);
+            titulo.innerHTML = 'Cambiamos el título';
+            console.log(titulo.innerHTML);
+       } 
     </script>
-
 </body>
 </html>

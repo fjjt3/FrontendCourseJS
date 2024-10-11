@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <title>Manejo DOM con JavaScript</title>
 </head>
-<body onload="entrar()">
+<body>
     <h1 id="titulo">Manejo DOM con JavaScript</h1>
     <br/>
-    <div id="mostrar"></div>
+    Nombre: <input type="text" onchange="convertir(this)"/>
     <script>
-        function entrar(){
-            alert('loading web');
-            let texto ='';
-            if(navigator.cookieEnabled){
-                texto='Cookies habilatadas'
-            }else {
-                texto='Cookies inhabilatadas'
-            }
-            document.getElementById('mostrar').innerHTML = texto
+        function convertir(nombreInput){
+            nombreInput.value = nombreInput.value.toUpperCase();
         }
     </script>
 </body>

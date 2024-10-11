@@ -5,7 +5,8 @@
     <title>Manejo DOM con JavaScript</title>
 </head>
 <body>
-    <h1 id="titulo" onmouseover="rojo(this)" onmouseout="azul(this)">
+    <h1 id="titulo" onmouseover="rojo(this)" onmouseup="azul(this)"
+    onclick="verde(this)">
         Manejo DOM con JavaScript</h1>
     <br/>
     
@@ -15,7 +16,10 @@
        }
        function azul(titulo){
         titulo.style.color = 'blue';
-   }
+       }
+       function verde(titulo){
+        titulo.style.color = 'green';
+       }
     </script>
 </body>
 </html>
